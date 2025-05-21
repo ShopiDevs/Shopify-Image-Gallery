@@ -1,0 +1,62 @@
+
+
+
+{% schema %}
+{
+  "name": "Gallery",
+  "tag": "section",
+  "class": "gallery-section",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Gallery Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 50,
+  "presets": [
+    {
+      "name": "Gallery Section",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.gallery-item img:hover {
+  transform: scale(1.03);
+}
+</style>
+
+<div class="gallery-grid">
+  {% for block in section.blocks %}
+    {% if block.settings.image %}
+      <div class="gallery-item">
+        <a href="{{ block.settings.image | image_url: width: 1600 }}" target="_blank">
+          <img src="{{ block.settings.image | image_url: width: 800 }}" alt="Gallery image">
+        </a>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
+
