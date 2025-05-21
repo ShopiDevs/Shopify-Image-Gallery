@@ -34,3 +34,6 @@ Under Theme template, choose page.gallery
 Save
 
 Now go to Customize Theme, open the Gallery page, and you can add image blocks directly via the sidebar 👌
+
+
+If you're looking for a more dynamic and easier way to manage photo and video galleries in Shopify, <a href="https://apps.shopify.com/essential-grid-gallery?utm_source=google&utm_medium=github&utm_campaign=shopidevs_marketing&utm_content=shopify_image_gallery_project" target="_blank">Essential Grid Gallery</a> might be worth a look.
